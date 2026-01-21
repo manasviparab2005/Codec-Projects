@@ -1,16 +1,55 @@
-# React + Vite
+# Weather Taskbar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautiful and responsive weather application built with React and Vite. This application allows users to search for cities, view current weather conditions, and see a 7-day forecast.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Real-time Weather**: Get up-to-date weather data including temperature, humidity, wind speed, and more.
+- **City Search**: Search for any city worldwide to get its weather forecast.
+- **7-Day Forecast**: Plan ahead with a detailed weekly weather outlook.
+- **Responsive Design**: Works seamlessly on desktops, tablets, and mobile devices.
+- **Dynamic UI**: Adapts based on weather conditions.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React, Vite
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Data Source**: Open-Meteo API (No API key required)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Follow these instructions to run the project locally on your machine.
+
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) installed on your computer.
+
+### Installation
+
+1.  **Clone the repository** (or download and unzip the code):
+    ```bash
+    git clone <repository-url>
+    cd weather-taskbar
+    ```
+
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
+
+4.  **Open the app**:
+    Click the link shown in the terminal (usually `http://localhost:5173`) to view the app in your browser.
+
+## Deployment
+
+To build the app for production:
+
+```bash
+npm run build
+```
