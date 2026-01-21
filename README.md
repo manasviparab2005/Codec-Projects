@@ -17,6 +17,22 @@ A beautiful and responsive weather application built with React and Vite. This a
 - **Icons**: Lucide React
 - **Data Source**: Open-Meteo API (No API key required)
 
+## API Usage (Backend Queries)
+
+This application is **serverless** (frontend-only) and fetches data directly from the Open-Meteo public API. No backend server setup is required.
+
+The application communicates with the following endpoints:
+
+1.  **Weather Forecast**:
+    *   **Endpoint**: `https://api.open-meteo.com/v1/forecast`
+    *   **Query Parameters**: `latitude`, `longitude`, `current` (temp, humidity, wind, etc.), `daily` (min/max temp), `timezone`
+    *   **Use**: Fetches current weather and 7-day forecast data.
+
+2.  **City Search (Geocoding)**:
+    *   **Endpoint**: `https://geocoding-api.open-meteo.com/v1/search`
+    *   **Query Parameters**: `name`, `count`, `language`, `format`
+    *   **Use**: Converts city names entered by the user into latitude/longitude coordinates.
+
 ## Getting Started
 
 Follow these instructions to run the project locally on your machine.
