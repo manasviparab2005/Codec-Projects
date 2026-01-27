@@ -1,0 +1,111 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-2xl);
+    animation: fadeIn var(--transition-base) ease-out;
+    transition: all var(--transition-base);
+}
+
+.search-bar:focus-within {
+    box-shadow: var(--shadow-glow);
+    border-color: var(--color-accent-primary);
+}
+
+.search-icon {
+    color: var(--color-accent-primary);
+    flex-shrink: 0;
+}
+
+.search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    padding: var(--space-xs) 0;
+}
+
+.search-input:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.clear-btn {
+    padding: var(--space-xs);
+    background: var(--color-glass-bg);
+    color: var(--color-text-tertiary);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.clear-btn:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    transform: scale(1.1);
+}
+
+.loading-indicator {
+    display: flex;
+    align-items: center;
+    color: var(--color-accent-primary);
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.search-btn {
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--gradient-secondary);
+    color: white;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.search-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.search-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.search-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+    .search-bar {
+        padding: var(--space-sm);
+        gap: var(--space-sm);
+    }
+
+    .search-input {
+        font-size: 0.9rem;
+    }
+
+    .search-btn {
+        padding: var(--space-sm) var(--space-md);
+        font-size: 0.9rem;
+    }
+}
