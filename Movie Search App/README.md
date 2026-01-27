@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 # Movie Search App
 
-A React-based movie search application that allows users to search for movies using the OMDB API and view details.
+A React-based movie search application using the OMDB API.allows users to search for movies using the OMDB API and view details.
 
 ## Features
 
@@ -60,6 +59,3 @@ npm run build
 ```
 
 The output will be in the `dist` directory.
-=======
-#Project -2
->>>>>>> 5b15085fa0e40c7edcfbdb347d287a5b32fd7e84
