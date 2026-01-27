@@ -59,7 +59,8 @@ function App() {
         }
       }
     } catch (err) {
-      setError('Failed to fetch movies. Please check your internet connection and API key.');
+      console.error("Full error object:", err);
+      setError(`Error: ${err.message}`);
       setMovies([]);
     } finally {
       setIsLoading(false);
