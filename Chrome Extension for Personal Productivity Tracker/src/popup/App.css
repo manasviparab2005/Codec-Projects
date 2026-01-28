@@ -1,0 +1,251 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --bg-color: #121212;
+  --surface-color: #1e1e1e;
+  --primary-color: #646cff;
+  /* Vibrant Indigo */
+  --primary-hover: #535bf2;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --accent-gradient: linear-gradient(135deg, #646cff 0%, #bc52ee 100%);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --danger: #ef4444;
+  --success: #22c55e;
+}
+
+body {
+  margin: 0;
+  width: 380px;
+  /* Slightly wider */
+  min-height: 550px;
+  padding: 1.5rem;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.2rem;
+  /* Prevent clipper descenders */
+  letter-spacing: -0.02em;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  margin-bottom: 1.5rem;
+  background: var(--surface-color);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.tabs button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.6rem;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.tabs button:hover {
+  color: var(--text-primary);
+  background: var(--glass-bg);
+}
+
+.tabs button.active {
+  color: #fff;
+  background: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(100, 108, 255, 0.4);
+}
+
+/* Cards */
+.card {
+  background: var(--surface-color);
+  padding: 1.25rem;
+  border-radius: 16px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+.site-info {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.domain {
+  font-weight: 500;
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.time {
+  color: var(--text-secondary);
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.exceeded .domain {
+  color: var(--danger);
+}
+
+/* Inputs */
+.goal-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.goal-input input {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.goal-input input:focus {
+  border-color: var(--primary-color);
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+}
+
+.refresh-btn,
+.add-goal-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.refresh-btn:hover,
+.add-goal-btn:hover {
+  background: var(--primary-hover);
+}
+
+.refresh-btn:active,
+.add-goal-btn:active {
+  transform: scale(0.98);
+}
+
+.delete-btn {
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  font-size: 1.2rem;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.delete-btn:hover {
+  color: var(--danger);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* Chart */
+.chart-container {
+  position: relative;
+  height: 220px;
+  width: 100%;
+  margin: 1rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
