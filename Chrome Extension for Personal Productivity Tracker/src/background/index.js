@@ -65,11 +65,10 @@ const updateTime = async () => {
           }
 
           // ONE-TIME System Notification
-          const iconUrl = chrome.runtime.getURL('icon128.png');
           if (!notified[normalizedDomain]) {
             chrome.notifications.create({
               type: 'basic',
-              iconUrl: iconUrl,
+              iconUrl: '/icon128.png',
               title: 'Goal Exceeded!',
               message: `You have exceeded your ${limitMinutes} minute limit on ${normalizedDomain}.`
             });
