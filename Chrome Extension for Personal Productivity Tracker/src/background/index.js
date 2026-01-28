@@ -150,3 +150,30 @@ setInterval(async () => {
     await updateTime();
   }
 }, 10000);
+
+// Listen for messages from content script/popup
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === "ADD_TIME") {
+    const domain = request.domain;
+    if (domain) {
+      chrome.storage.local.get([domain]).then((data) => {
+        let currentUsage = data[domain] || 0;
+        // Subtract 60 seconds (60000 ms) from usage to give "credit"
+        let newUsage = Math.max(0, currentUsage - 60000);
+
+        // Also reset notification for this domain so they get notified again if they exceed it again
+        chrome.storage.local.get(['notified']).then((notifyData) => {
+          const notified = notifyData.notified || {};
+          if (notified[domain]) {
+            delete notified[domain];
+            chrome.storage.local.set({ notified });
+          }
+        });
+
+        chrome.storage.local.set({ [domain]: newUsage }, () => {
+          console.log(`Added 1 minute to ${domain} (usage reduced to ${newUsage})`);
+        });
+      });
+    }
+  }
+});

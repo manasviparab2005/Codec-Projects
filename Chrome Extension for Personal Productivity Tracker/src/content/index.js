@@ -70,8 +70,9 @@ function showOverlay(msg) {
         cursor: pointer;
     `;
     ignoreBtn.onclick = () => {
+        const domain = window.location.hostname.replace(/^www\./, '');
+        chrome.runtime.sendMessage({ action: "ADD_TIME", domain: domain });
         overlay.remove();
-        // Ideally we message background to snooze logic, but for now simple dismiss
     };
 
     overlay.appendChild(title);
